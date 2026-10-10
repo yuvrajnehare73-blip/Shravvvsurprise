@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f9e9ef">
+<title>For Shravvuu ♡</title>
+<style>
+:root{--pink:#f8e5ed;--pink2:#f2c9d9;--rose:#b96583;--ink:#68495a;--cream:#fffaf5;--lav:#e9e4f6}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{font-family:Georgia,"Times New Roman",serif;color:var(--ink);background:radial-gradient(ellipse at 20% 15%,#fffafc 0,transparent 38%),radial-gradient(ellipse at 90% 85%,#e8e3f6 0,transparent 35%),linear-gradient(135deg,#f9e9ef,#fff7f1 58%,#f5e7f0)}
+button{font:inherit;cursor:pointer;border:0}
+#app{height:100dvh;width:100%;position:relative;overflow:hidden;isolation:isolate}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.12;z-index:1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E")}
+.sparkle{position:absolute;pointer-events:none;color:#fff;font-size:20px;animation:twinkle 3s ease-in-out infinite;z-index:0}
+@keyframes twinkle{0%,100%{opacity:.3;transform:scale(.8) rotate(0)}50%{opacity:1;transform:scale(1.15) rotate(18deg)}}
+.screen{position:absolute;inset:0;display:none;align-items:center;justify-content:center;padding:22px 18px 74px;z-index:2;animation:appear .55s ease both}
+.screen.active{display:flex}
+@keyframes appear{from{opacity:0;transform:translateY(10px) scale(.99)}to{opacity:1;transform:none}}
+.panel{width:min(680px,100%);max-height:100%;overflow:hidden;text-align:center;padding:clamp(20px,4vh,38px) clamp(18px,4vw,40px);border:1px solid #fff9;border-radius:28px;background:linear-gradient(145deg,#fffaf2ed,#fff3f8e8);box-shadow:0 18px 60px #a86a8420, inset 0 0 0 5px #fff6;position:relative}
+.kicker{font:600 10px/1.5 Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#b77991}
+h1,h2,p{margin-top:0}
+h1{font-size:clamp(36px,7vw,64px);line-height:.98;font-weight:normal;margin-bottom:14px;color:#a65376;letter-spacing:-.04em}
+h2{font-size:clamp(25px,4.6vw,39px);font-weight:normal;line-height:1.05;margin-bottom:12px;color:#a65376}
+p{font-size:clamp(14px,2vw,17px);line-height:1.55;margin-bottom:17px}
+.small{font-size:12px;opacity:.76}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:999px;background:#b96583;color:white;box-shadow:0 7px 18px #b9658330;transition:transform .2s,box-shadow .2s;margin:4px;font:600 12px Arial,sans-serif;letter-spacing:.04em}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px #b9658340}
+.btn.ghost{background:#fff8;color:#985a74;border:1px solid #e8bdce;box-shadow:none}
+.topbar{position:absolute;top:14px;left:16px;right:16px;display:flex;align-items:center;justify-content:space-between;z-index:10;font:11px Arial,sans-serif;color:#9d6c80;letter-spacing:.06em}
+.pill{padding:8px 11px;border:1px solid #fff9;border-radius:999px;background:#fff8;backdrop-filter:blur(8px)}
+#progress{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10}
+.dot{width:6px;height:6px;border-radius:50%;background:#d8a7bb;opacity:.45;transition:all .3s}
+.dot.on{width:20px;border-radius:8px;opacity:1;background:#b96583}
+.bow{font-size:30px;display:block;margin-bottom:12px;color:#ce8ba6}
+.floating-heart{position:absolute;bottom:-60px;z-index:0;animation:floatup linear forwards;pointer-events:none}
+@keyframes floatup{to{transform:translateY(-120vh) rotate(28deg);opacity:0}}
+.hero-deco{font-size:clamp(32px,6vw,54px);margin:8px 0 12px;filter:drop-shadow(0 7px 10px #d79cb844)}
+.balloon-area{height:min(38vh,280px);min-height:180px;display:flex;align-items:center;justify-content:center;gap:clamp(7px,2.5vw,20px);flex-wrap:wrap;margin:10px auto 14px}
+.balloon{width:clamp(55px,11vw,82px);height:clamp(74px,14vw,108px);border-radius:50% 50% 46% 46%;position:relative;box-shadow:inset -8px -8px 14px #6f3a4512,inset 8px 8px 14px #ffffff9c,0 8px 14px #c18aa333;animation:bob 2.4s ease-in-out infinite;transition:transform .25s,opacity .25s;touch-action:manipulation}
+.balloon:before{content:"";position:absolute;width:10px;height:9px;bottom:-5px;left:calc(50% - 5px);background:inherit;clip-path:polygon(0 0,100% 0,50% 100%)}
+.balloon:after{content:"";position:absolute;left:50%;top:100%;height:38px;border-left:1px solid #bfa0ab;transform:rotate(3deg);transform-origin:top}
+.balloon:nth-child(3n+1){background:#edb9cf}.balloon:nth-child(3n+2){background:#d8d0ef;animation-delay:-.7s}.balloon:nth-child(3n){background:#f3d9ae;animation-delay:-1.2s}
+@keyframes bob{0%,100%{transform:translateY(2px) rotate(-3deg)}50%{transform:translateY(-10px) rotate(3deg)}}
+.balloon.popped{transform:scale(1.7) rotate(20deg);opacity:0;pointer-events:none}
+.secret{min-height:24px;color:#a65376;font-size:15px;font-style:italic}
+.photo-wrap{width:min(440px,100%);height:min(47vh,430px);margin:10px auto 14px;display:flex;align-items:center;justify-content:center}
+.polaroid{height:100%;max-width:100%;padding:10px 10px 36px;background:white;box-shadow:0 14px 32px #70465a26;transform:rotate(-2deg);border-radius:3px;position:relative}
+.polaroid img{height:100%;max-width:100%;width:auto;object-fit:contain;display:block;border-radius:2px}
+.polaroid .caption{position:absolute;bottom:9px;left:8px;right:8px;font-size:13px;color:#8e5b70}
+.photo-count{font:10px Arial,sans-serif;letter-spacing:.16em;color:#b47a91}
+.media-panel{width:min(780px,100%);padding:clamp(12px,2.3vh,22px);max-height:calc(100dvh - 105px)}
+.video-frame{width:100%;height:min(53vh,470px);background:#211b20;border-radius:16px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin:10px 0 14px}
+video{width:100%;height:100%;object-fit:contain;background:#211b20}
+.letter{font-size:clamp(15px,2.1vw,18px);line-height:1.72;text-align:left;max-width:540px;margin:0 auto 18px}
+.signature{font-size:23px;color:#a65376;font-style:italic}
+#musicBtn{border:0}
+@media(max-height:650px){.panel{padding:16px 20px}.hero-deco{margin:2px 0 6px}.balloon-area{height:31vh;min-height:140px}.balloon:after{height:25px}.photo-wrap{height:40vh}.video-frame{height:42vh}.screen{padding-top:45px;padding-bottom:62px}}
+@media(max-width:420px){.panel{border-radius:22px}.balloon-area{gap:8px}.balloon{width:48px;height:66px}.balloon:after{height:28px}.topbar{font-size:9px}.pill{padding:7px 8px}.photo-wrap{height:43vh}}
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="grain"></div>
+  <div class="sparkle" style="top:13%;left:10%">✧</div><div class="sparkle" style="top:22%;right:11%;animation-delay:-1s">✦</div>
+  <div class="sparkle" style="bottom:19%;left:13%;animation-delay:-2s">✧</div><div class="sparkle" style="bottom:28%;right:9%;animation-delay:-.5s">✦</div>
+  <div class="topbar"><span class="pill">A LITTLE BIRTHDAY WORLD ♡</span><button class="pill" id="musicBtn" aria-label="Toggle piano music">♫ Piano: off</button></div>
+  <div id="screens"></div>
+  <div id="progress"></div>
+</div>
+<script>
+const photos = [
+  ["1000406021.jpg","A little moment to keep ♡"],
+  ["1000406016.jpg","One for the memory book"],
+  ["1000406015.jpg","A tiny piece of our story"],
+  ["1000406014.jpg","The moments that stay"],
+  ["1000406012.jpg","A memory worth keeping"],
+  ["1000406010.jpg","Just a little snapshot"],
+  ["1000406011.jpg","Saved here, with a smile"]
+];
+const videos = [
+  "1000406017.mp4","1000406013.mp4","1000406018.mp4",
+  "1000406019.mp4","1000406020.mp4","1000406022.mp4","1000406023.mp4"
+];
+const screens = document.getElementById('screens');
+const progress = document.getElementById('progress');
+let step = 0, photoIndex = 0, videoIndex = 0, popped = 0, audioCtx = null, musicOn = false, melodyTimer = null, noteIndex=0;
+const steps = ["welcome","balloons","photos","notes","videos","letter"];
+function el(tag, cls, html){const n=document.createElement(tag);if(cls)n.className=cls;if(html!==undefined)n.innerHTML=html;return n}
+function button(label, action, ghost=false){const b=el('button','btn'+(ghost?' ghost':''),label);b.onclick=action;return b}
+function panel(inner, extra=''){return el('div','panel '+extra,inner)}
+function makeScreen(name, inner, extra=''){const s=el('section','screen'+(step===steps.indexOf(name)?' active':''));s.dataset.name=name;s.appendChild(inner);screens.appendChild(s);return s}
+function go(name){step=steps.indexOf(name);document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.dataset.name===name));[...progress.children].forEach((d,i)=>d.classList.toggle('on',i===step));}
+function makeDots(){progress.innerHTML='';steps.forEach((_,i)=>{const d=el('span','dot'+(i===0?' on':''));progress.appendChild(d)})}
+function renderWelcome(){
+ const p=panel(`<span class="bow">୨୧</span><div class="kicker">a little surprise, just for you</div><div class="hero-deco">🎀 ✨ 🎂</div><h1>Happy 17th,<br> Shravvuu</h1><p>A tiny dreamy corner filled with memories, silly surprises, and lots of birthday love.</p><p class="small">Made just for a very special friend ♡</p>`);
+ p.appendChild(button("Open your surprise  ✧",()=>{go('balloons');if(!musicOn)toggleMusic()}));
+ makeScreen('welcome',p);
+}
+function renderBalloons(){
+ const p=panel(`<div class="kicker">little game, little joy</div><h2>Pop a few wishes 🎈</h2><p>Tap all five balloons to find the tiny birthday notes hiding inside.</p><div class="balloon-area" id="balloonArea"></div><div class="secret" id="secret">A wish is waiting inside each one…</div>`);
+ const area=p.querySelector('#balloonArea'), secret=p.querySelector('#secret');
+ const messages=["You deserve the happiest little moments ♡","17 looks lovely on you ✨","Keep being your wonderfully weird self","May this year be soft and kind to you","A friend like you makes memories brighter 💗"];
+ messages.forEach((msg,i)=>{const b=el('button','balloon');b.setAttribute('aria-label','Pop birthday balloon '+(i+1));b.onclick=()=>{if(b.classList.contains('popped'))return;b.classList.add('popped');popped++;secret.textContent=msg;spawnConfetti();if(popped===5){setTimeout(()=>{secret.textContent="All wishes collected! You did it ♡";p.appendChild(button("See our memories →",()=>go('photos')))},500)}};area.appendChild(b)});
+ makeScreen('balloons',p);
+}
+function renderPhoto(){
+ const p=panel(`<div class="kicker">our little memory book</div><h2>Moments worth keeping</h2><div class="photo-count" id="photoCount"></div><div class="photo-wrap"><div class="polaroid"><img id="memoryPhoto" alt="A shared memory"><div class="caption" id="photoCaption"></div></div></div><p class="small">Some moments become little keepsakes.</p>`);
+ const img=p.querySelector('#memoryPhoto'), cap=p.querySelector('#photoCaption'), count=p.querySelector('#photoCount');
+ function update(){const item=photos[photoIndex];img.src='media/'+item[0];cap.textContent=item[1];count.textContent=`MEMORY ${photoIndex+1} OF ${photos.length}`;}
+ update();
+ p.appendChild(button("←",()=>{photoIndex=(photoIndex-1+photos.length)%photos.length;update()},true));
+ p.appendChild(button("Next memory →",()=>{if(photoIndex<photos.length-1){photoIndex++;update()}else go('notes')}));
+ makeScreen('photos',p);
+}
+function renderNotes(){
+ const p=panel(`<span class="bow">♡</span><div class="kicker">a tiny friendship note</div><h2>For the days you forget</h2><p>Even on the low days, the people who stay make the world feel a little less heavy.</p><p>Thanks for being part of so many little moments and memories. I hope 17 brings you more reasons to laugh, feel loved, and be completely yourself.</p><div class="hero-deco">🫶🏻 ✨ 🌷</div>`);
+ p.appendChild(button("A few moving memories →",()=>go('videos')));
+ makeScreen('notes',p);
+}
+function renderVideos(){
+ const p=panel(`<div class="kicker">little clips, big memories</div><h2>Press play ♡</h2><div class="video-frame"><video id="memoryVideo" controls playsinline preload="metadata"></video></div><div class="photo-count" id="videoCount"></div><p class="small">Take your time with these little moments.</p>`,'media-panel');
+ const v=p.querySelector('video'), count=p.querySelector('#videoCount');
+ function update(){v.pause();v.src='media/'+videos[videoIndex];v.load();count.textContent=`CLIP ${videoIndex+1} OF ${videos.length}`;}
+ update();
+ p.appendChild(button("← Previous",()=>{if(videoIndex>0){videoIndex--;update()}else go('notes')},true));
+ p.appendChild(button(videoIndex===videos.length-1?"Open your letter →":"Next clip →",()=>{if(videoIndex<videos.length-1){videoIndex++;update()}else go('letter')}));
+ makeScreen('videos',p);
+}
+function renderLetter(){
+ const p=panel(`<span class="bow">୨୧</span><div class="kicker">one last little surprise</div><h2>Dear Shravvuu,</h2><div class="letter">Happy 17th birthday! 💗 I hope this year brings you peaceful days, unexpected happiness, lots of laughter, and people who remind you how special you are. Thank you for being a friend who stays, especially when life feels a little low. I hope you keep collecting beautiful memories and always find a reason to smile. You deserve a year that feels as lovely as the little moments you give to others.<br><br>Here's to more silly memories, more laughs, and more chapters of friendship. Have the sweetest birthday. ♡</div><div class="signature">With lots of birthday wishes ✨</div>`);
+ p.appendChild(button("Replay the surprise ↺",()=>{photoIndex=0;videoIndex=0;popped=0;go('welcome')},true));
+ makeScreen('letter',p);
+}
+function spawnConfetti(){for(let i=0;i<18;i++){const c=el('span','floating-heart',['♡','✧','♥','✦'][i%4]);c.style.left=(Math.random()*100)+'%';c.style.color=['#b96583','#d9a8bd','#c4b8e8','#d9b36d'][i%4];c.style.fontSize=(12+Math.random()*18)+'px';c.style.animationDuration=(2+Math.random()*2)+'s';document.getElementById('app').appendChild(c);setTimeout(()=>c.remove(),4300)}}
+function floatHeart(){const h=el('span','floating-heart',['♡','✧','♥'][Math.floor(Math.random()*3)]);h.style.left=(Math.random()*100)+'%';h.style.color=['#d69ab3','#c8b8e7','#d9bd91'][Math.floor(Math.random()*3)];h.style.fontSize=(14+Math.random()*17)+'px';h.style.animationDuration=(7+Math.random()*6)+'s';document.getElementById('app').appendChild(h);setTimeout(()=>h.remove(),14000)}
+setInterval(floatHeart,1800);
+// Gentle original piano-like melody synthesized locally; starts only after the visitor taps.
+const melody=[261.63,329.63,392.00,329.63,293.66,349.23,440.00,349.23,261.63,329.63,392.00,523.25,440.00,392.00,329.63,293.66];
+function playNote(freq,when){if(!audioCtx||!musicOn)return;const osc=audioCtx.createOscillator(),gain=audioCtx.createGain(),filter=audioCtx.createBiquadFilter();osc.type='sine';osc.frequency.value=freq;filter.type='lowpass';filter.frequency.value=1600;gain.gain.setValueAtTime(.0001,when);gain.gain.exponentialRampToValueAtTime(.045,when+.04);gain.gain.exponentialRampToValueAtTime(.0001,when+1.1);osc.connect(filter);filter.connect(gain);gain.connect(audioCtx.destination);osc.start(when);osc.stop(when+1.15)}
+function scheduleMelody(){if(!musicOn||!audioCtx)return;playNote(melody[noteIndex%melody.length],audioCtx.currentTime+.02);noteIndex++;melodyTimer=setTimeout(scheduleMelody,650)}
+async function toggleMusic(){const btn=document.getElementById('musicBtn');if(!musicOn){const Ctx=window.AudioContext||window.webkitAudioContext;if(!Ctx){btn.textContent='♫ Piano unavailable';return}audioCtx=audioCtx||new Ctx();if(audioCtx.state==='suspended')await audioCtx.resume();musicOn=true;btn.textContent='♫ Piano: on';scheduleMelody()}else{musicOn=false;clearTimeout(melodyTimer);btn.textContent='♫ Piano: off'}}
+document.getElementById('musicBtn').addEventListener('click',toggleMusic);
+makeDots();renderWelcome();renderBalloons();renderPhoto();renderNotes();renderVideos();renderLetter();
+</script>
+</body>
+</html>
